@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {ApplicationForm} from "./ApplicationForm";
 import gql from 'graphql-tag'
 
 const createSiteMutationDocument = gql`
-    mutation create_site($clientMutationId: String!, $domain: String!, $name: String!) {
-        createSite(input: {clientMutationId: $clientMutationId,domain: $domain, name: $name}) {
+    mutation createSite($clientMutationId: String!, $domain: String!) {
+        createSite(input: {clientMutationId: $clientMutationId,domain: $domain}) {
             id
         }
     }
@@ -20,12 +19,10 @@ ReactDOM.render(
         liveValidate={true}
         config={{
             mutation: {
-                name: 'create_site',
+                name: 'createSite',
                 document: createSiteMutationDocument
             }
         }}
-        data={{}}
-        ui={{}}
     />
     , document.getElementById('root'));
 registerServiceWorker();
