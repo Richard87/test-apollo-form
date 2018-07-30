@@ -1,0 +1,770 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "properties": {
+    "Query": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "type": "object",
+          "properties": {
+            "return": {},
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "id": {}
+              },
+              "required": [
+                "id"
+              ]
+            }
+          },
+          "required": []
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/Address"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "id": {}
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "addresses": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/AddressConnection"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "first": {
+                  "type": "number"
+                },
+                "after": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "openingHour": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/OpeningHour"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "id": {}
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "openingHours": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/OpeningHourConnection"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "first": {
+                  "type": "number"
+                },
+                "after": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "site": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/Site"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "id": {}
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "sites": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/SiteConnection"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "first": {
+                  "type": "number"
+                },
+                "after": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    },
+    "Mutation": {
+      "type": "object",
+      "properties": {
+        "deleteAddress": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/deleteAddressPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/deleteAddressInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "updateAddress": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/updateAddressPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/updateAddressInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "createAddress": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/createAddressPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/createAddressInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "deleteOpeningHour": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/deleteOpeningHourPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/deleteOpeningHourInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "updateOpeningHour": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/updateOpeningHourPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/updateOpeningHourInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "createOpeningHour": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/createOpeningHourPayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/createOpeningHourInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "deleteSite": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/deleteSitePayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/deleteSiteInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "updateSite": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/updateSitePayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/updateSiteInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        },
+        "createSite": {
+          "type": "object",
+          "properties": {
+            "return": {
+              "$ref": "#/definitions/createSitePayload"
+            },
+            "arguments": {
+              "type": "object",
+              "properties": {
+                "input": {
+                  "$ref": "#/definitions/createSiteInput"
+                }
+              },
+              "required": []
+            }
+          },
+          "required": []
+        }
+      },
+      "required": []
+    }
+  },
+  "definitions": {
+    "Address": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "postalCode": {
+          "type": "string"
+        },
+        "streetAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "AddressConnection": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AddressEdge"
+          }
+        },
+        "pageInfo": {
+          "$ref": "#/definitions/AddressPageInfo"
+        },
+        "totalCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "pageInfo",
+        "totalCount"
+      ]
+    },
+    "AddressEdge": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "$ref": "#/definitions/Address"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cursor"
+      ]
+    },
+    "AddressPageInfo": {
+      "type": "object",
+      "properties": {
+        "endCursor": {
+          "type": "string"
+        },
+        "hasNextPage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "hasNextPage"
+      ]
+    },
+    "OpeningHour": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "open": {
+          "type": "string"
+        },
+        "close": {
+          "type": "string"
+        },
+        "weekday": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "open",
+        "close",
+        "weekday"
+      ]
+    },
+    "OpeningHourConnection": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OpeningHourEdge"
+          }
+        },
+        "pageInfo": {
+          "$ref": "#/definitions/OpeningHourPageInfo"
+        },
+        "totalCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "pageInfo",
+        "totalCount"
+      ]
+    },
+    "OpeningHourEdge": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "$ref": "#/definitions/OpeningHour"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cursor"
+      ]
+    },
+    "OpeningHourPageInfo": {
+      "type": "object",
+      "properties": {
+        "endCursor": {
+          "type": "string"
+        },
+        "hasNextPage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "hasNextPage"
+      ]
+    },
+    "Site": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "domain": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "openingHours": {
+          "$ref": "#/definitions/OpeningHourConnection"
+        }
+      },
+      "required": [
+        "id",
+        "domain"
+      ]
+    },
+    "SiteConnection": {
+      "type": "object",
+      "properties": {
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SiteEdge"
+          }
+        },
+        "pageInfo": {
+          "$ref": "#/definitions/SitePageInfo"
+        },
+        "totalCount": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "pageInfo",
+        "totalCount"
+      ]
+    },
+    "SiteEdge": {
+      "type": "object",
+      "properties": {
+        "node": {
+          "$ref": "#/definitions/Site"
+        },
+        "cursor": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cursor"
+      ]
+    },
+    "SitePageInfo": {
+      "type": "object",
+      "properties": {
+        "endCursor": {
+          "type": "string"
+        },
+        "hasNextPage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "hasNextPage"
+      ]
+    },
+    "deleteAddressInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "deleteAddressPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateAddressInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateAddressPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "createAddressInput": {
+      "type": "object",
+      "properties": {
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientMutationId"
+      ]
+    },
+    "createAddressPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "deleteOpeningHourInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "deleteOpeningHourPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateOpeningHourInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateOpeningHourPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "createOpeningHourInput": {
+      "type": "object",
+      "properties": {
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "clientMutationId"
+      ]
+    },
+    "createOpeningHourPayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "deleteSiteInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "deleteSitePayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateSiteInput": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "domain": {
+          "type": "string"
+        },
+        "openingHours": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "updateSitePayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "domain": {
+          "type": "string"
+        },
+        "openingHours": {
+          "$ref": "#/definitions/OpeningHourConnection"
+        },
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientMutationId"
+      ]
+    },
+    "createSiteInput": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "openingHours": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "domain",
+        "clientMutationId"
+      ]
+    },
+    "createSitePayload": {
+      "type": "object",
+      "properties": {
+        "id": {},
+        "domain": {
+          "type": "string"
+        },
+        "openingHours": {
+          "$ref": "#/definitions/OpeningHourConnection"
+        },
+        "clientMutationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "domain",
+        "clientMutationId"
+      ]
+    }
+  }
+}
